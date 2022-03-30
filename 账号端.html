@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>个人账号端</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 设置超链接样式 */
+        a:link{
+            color: black;
+            text-decoration: none;
+        }
+        a:visited{
+            color: black;
+        }
+        a>*:hover{
+            background-color: #bfa;
+        }
+
+        /* 设置爸爸样式 */
+        .baba{
+            width: 1482px;
+            margin: auto;
+        }
+
+
+        /* 设置左侧导航样式 */
+        nav{
+            width: 280px;
+            height: 100vh;
+            background-color: chocolate;
+            float: left;
+        }
+            /* 设置导航大标题样式 */
+            h1{
+               font-size: 30px; 
+               margin: 10px;
+               margin-bottom: 20px;
+            }
+            /* 设置导航小标题样式 */
+            h2{
+               font-size: 18px;
+               margin-left: 10px;
+               margin-bottom: 10px;
+            }
+
+
+        /* 设置主体样式 */
+        main{
+            width:1200px;
+            float: left;
+            background-color: aqua;
+        }
+            /* 设置主体标题样式 */
+            h3{
+                font-size: 35px;
+                margin: 15px;
+                text-align: center;
+            }
+            /* 设置主体内容栏样式 */
+            section{
+                display: flex;
+                margin-bottom: 10px;
+            }
+                /* 设置数据源样式 */
+                .sjy{
+                    font-size: 20px;
+                    width: 300px;
+                }
+                /* 设置账号样式 */
+                .zh{
+                    font-size: 20px;
+                    width: 330px;
+                }
+                /* 设置密码样式 */
+                .mm{
+                    font-size: 20px;
+                    width: 330px;
+                }
+                /* 设置密保样式 */
+                .mb{
+                    font-size: 20px;
+                    width: 220px;
+                }
+    </style>
+</head>
+<body>
+    <p id="fh" style="position: fixed;right: 0px;bottom: 0px; font-size: 20px;border: solid;"><a href="./index.html">首页</a></p>
+<div class="baba">
+    <!-- 左侧导航 -->
+    <nav>
+        <!-- 导航大标题 -->
+        <a href="#xxbm"><h1>学习/报名</h1></a>
+        <!-- 导航小标题 -->
+        <a href="#jsjej"><h2>计算机二级/英语四六级</h2></a>
+        <a href="#jszg"><h2>教师资格证</h2></a>
+
+    </nav>
+    <!-- 主体内容 -->
+    <main>
+        <!-- 主体标题 -->
+        <h3 id="xxbm">学习/报名</h3>
+        <!-- 主体内容栏 -->
+        <section id="jsjej">
+            <!-- 数据源 -->
+            <div class="sjy">计算机二级/英语四六级</div>
+            <!-- 账号 -->
+            <textarea rows="1"class="zh" style="color: black;">846453456@qq.com</textarea>
+            <!-- 密码 -->
+            <textarea rows="1"class="mm" style="color: white;">&1999911cxz#</textarea>
+            <!-- 密保 -->
+            <textarea rows="1"class="mb" style="color: black;">无</textarea>
+        </section>
+        <section id="jszg">
+            <!-- 数据源 -->
+            <div class="sjy">教师资格证</div>
+            <!-- 账号 -->
+            <textarea rows="1"class="zh" style="color: black;">330110199909115551</textarea>
+            <!-- 密码 -->
+            <textarea rows="1"class="mm" style="color: white;">1999911cxzCXZ</textarea>
+            <!-- 密保 -->
+            <textarea rows="1"class="mb" style="color: black;">无</textarea>
+        </section>
+    </main>
+</div>
+
+</body>
+
+
+
+</html>

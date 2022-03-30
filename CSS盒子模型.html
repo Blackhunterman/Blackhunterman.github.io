@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS盒子模型</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 设置页面边距 */
+        .total {
+            width: 1250px;
+            margin: 20px auto;
+        }
+
+        /* 设置补充里的间距 */
+        .bc>summary:not(:last-child) {
+            margin-bottom: 5px;
+        }
+
+        /* 设置补充间的间距 */
+        .mk>.bc:not(last-child) {
+            margin-bottom: 10px;
+        }
+
+        /* 设置补充按钮变换效果 */
+        .bc>summary:first-child {
+            width: 200px;
+        }
+
+        .bc>summary:first-child:hover {
+            background-color: rgb(45, 226, 196);
+        }
+
+        /* 设置模块间的间距 */
+        .mk {
+            margin-bottom: 50px;
+        }
+
+        /* 设置第三模块开始的标题大小和下边距 */
+        .xmk>p {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+
+        /* 设置第三模块开始的展开项行距 */
+        .xmk>.bc>p {
+            margin-bottom: 10px;
+        }
+
+        /* 设置第三模块开始的展开项之间的距离 */
+        .xmk>.bc {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="fh" style="position: fixed;right: 0px;bottom: 0px; font-size: 20px;border: solid;"><a href="./index.html">首页</a></p>
+    <div class="total">
+
+        <!-- 第一模块 -->
+        <div class="mk"><img src="./image/CSS盒子模型/建立标签.png" alt="无法显示">
+            <!-- 第一模块的补充 -->
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>关于W：</summary>
+                <summary>1.box-sizing设值：content-box或border-box。</summary>
+                <summary>2.W不设置值能多大就多大。</summary>
+            </details>
+            <!-- 补充2 -->
+            <details class="bc">
+                <summary>关于border：</summary>
+                <summary><img src="./image/CSS盒子模型/关于border.png" alt="无法显示"></summary>
+            </details>
+        </div>
+
+        <!-- 第二模块 -->
+        <div class="mk">
+            <img src="./image/CSS盒子模型/父子盒.png" alt="无法显示">
+            <!-- 第二模块的补充 -->
+
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>过度约束时：</summary>
+                <summary>1.无定位：可以设置ML，MR，ML/MR为auto，不设则自动设MR。</summary>
+                <summary>2.有定位(设了w和h的情况下，不然wh仍为最大)：L默认为其实位置的值，R默认auto。当R设值时，L变为auto，都设值时，R为auto（L和R设为0时，margin:auto;可以居中），垂直方向同理。</summary>
+            </details>
+            <!-- 补充2 -->
+            <details class="bc">
+                <summary>溢出处理：</summary>
+                <summary><img src="./image/CSS盒子模型/溢出处理.png" alt="无法显示"></summary>
+            </details>
+        </div>
+
+
+        <!-- 分割线 -->
+        -------------------------------------------------------------------------------------------
+        <!-- 第三新模块 -->
+        <div class="xmk">
+            <p>外边距的折叠：</p>
+            <!-- 第三模块的补充 -->
+
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>兄弟元素折叠时的原则：</summary>
+                <p>1.都为正取大值。</p>
+                <p>2.一正一负取和。</p>
+                <p>3.都为负，取大绝对值。</p>
+            </details>
+            <!-- 补充2 -->
+            <details class="bc">
+                <summary>父子元素折叠时：</summary>
+                <p>1.会发生折叠传递现象（子元素设置的外边距传递到父元素上）</p>
+                <p>2.传递现象的解决办法：原则上父子间有东西就不会发生传递，比如是边框，亦或是加上一个空的伪元素.所以只要在一个父元素之前加一个空的表格型（块元素不行，因为要用内容撑开才有位置）伪元素就行，如图：</p>
+                <img src="./image/CSS盒子模型/外边距折叠.png" alt="外边距折叠">
+            </details>
+        </div>
+
+        <!-- 第四新模块 -->
+        <div class="xmk">
+            <p>行内元素的盒模型：</p>
+            <!-- 第四模块的补充 -->
+
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>行内元素盒模型的特点：</summary>
+                <p>1.不可以设置宽高。</p>
+                <p>2.可以设置padding，border，margin。</p>
+                <p>3.垂直方向上不会影响布局（只掩盖）。</p>
+            </details>
+        </div>
+
+        <!-- 第五新模块 -->
+        <div class="xmk">
+            <p>轮廓阴影和圆角：</p>
+            <!-- 第五模块的补充 -->
+
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>轮廓：</summary>
+                <p>1.本质：一种不会影响布局的边框。</p>
+                <p>2.用法：outline属性后面的值和border完全一样。</p>
+            </details>
+            <details class="bc">
+                <summary>阴影：</summary>
+                <p>2.用法：box-shadow属性，前两个值为偏移量（可以是负值），第三个值是模糊半径（可以不写，越大越模糊），第四个值是颜色（可以加透明颜色效果）。</p>
+                <p>3.实例：box-shadow: 100px 100px 150px rgba(288,34,57,.8);</p>
+            </details>
+            <details class="bc">
+                <summary>圆角：</summary>
+                <p>1.属性设置方式：border-radius属性（只能画圆）或者border-top-left等类似单独属性（能画椭圆）。</p>
+                <p>2.值：%或px（%是宽和高所分别对应的百分比；px是以px为半径作圆）。</p>
+                <p>3.值的数量：</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;（1）border-radios：</p>
+                <img src="./image/CSS盒子模型/圆角.png" alt="圆角" style="width: 180px;margin-left: 15px;">
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;（2）border-top-left等：</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;一个值：以该值为半径作圆。</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;两个值：以第一个值为长，第二个值为宽的矩形画弧。</p>
+                <p>4.设为圆：宽高一样， border-radius设为50%。</p>
+            </details>
+        </div>
+
+        <!-- 第六新模块 -->
+        <div class="xmk">
+            <p>浮动：</p>
+            <!-- 第六模块的补充 -->
+
+            <!-- 补充1 -->
+            <details class="bc">
+                <summary>浮动的特点：</summary>
+                <p>1.浮动元素会脱离文档流，不再占据文档流的位置。（无论什么元素脱离文档流后都变成块元素，并且不独占一行，宽高默认被内容撑开。）</p>
+                <p>2.设置浮动以后元素会向父元素的左侧或右侧移动。</p>
+                <p>3.浮动元素默认不会从父元素中移除。</p>
+                <p>4.浮动元素向左或向右移动时，不会超过它前面的浮动元素.</p>
+                <p>5.如果元素的上边是一个没有浮动的块元素，则浮动元素最多就是和它一样高。</p>
+                <p>6.浮动元素不会盖住文字，文字会自动环绕在浮动元素周围。</p>
+            </details>
+            <details class="bc">
+                <summary>高度坍塌：</summary>
+                <p>1.高度坍塌的产生原因：未浮动时，父元素的高度默认是被子元素撑开的，当子元素浮动后，其会脱离文档流，无法撑起父元素高度，导致父元素高度坍塌。</p>
+                <p>2.开启bfc的好处：1.不会被浮动元素所覆盖 2.子元素和父元素外边距不会重叠 3.可以包含浮动子元素。</p>
+                <p>3.开启bfc解决办法：1.设置元素浮动 2.设置元素为行内块元素 3.将元素的overflow设置为非visible的值。</p>
+                <p>4.clear解决办法：clear可以清除浮动对元素的影响（可选值有left，right，both），故只要给浮动子元素设置一个带clear的兄弟元素就可以解决高度坍塌。（不太好）</p>
+                <p>5.clear加伪类完美解决高度坍塌：在父元素最后加上一个清除浮动的::after伪类元素，由于此伪类为行内块，所以将其转换为块元素就可以了，如图：</p>
+                <img src="./image/CSS盒子模型/高度坍塌.png" alt="高度坍塌">
+            </details>
+        </div>
+
+    </div>
+</body>
+
+</html>

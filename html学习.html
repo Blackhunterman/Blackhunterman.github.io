@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>web学习</title>
+    <link rel="stylesheet" href="reset.css">
+    <style>
+        /* 侧边目录 */
+
+        /* 设置目录 背景 和 宽高 位置 */
+        aside {
+            background-color: rgb(215, 222, 226);
+            width: 200px;
+            height: 800px;
+            position: fixed;
+        }
+
+        /* 设置目录内间距 外边距 字体大小 */
+        .ml {
+            padding-bottom: 10px;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+        /* 设置超链接样式 */
+        .ml:hover {
+            background-color: #bfa;
+        }
+
+
+
+        /* 右边工具栏 */
+        .gj {
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            width: 200px;
+            height: 200px;
+            background-color: rgb(215, 222, 226);
+        }
+
+
+
+        /* 主体内容 */
+
+        /* 设置主体内容的位置和字体大小和下边距*/
+        .zt {
+            position: absolute;
+            top: 0px;
+            left: 200px;
+            font-size: 20px;
+            padding-bottom: 1000px;
+        }
+
+        /* 设置最后一模块的分隔符 */
+        .zt>.mk:last-child::after {
+            content: '……………………………………………………………………………………………………………………';
+        }
+
+        /* 设置主体标题字体大小和外边距 */
+        .bt {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        /* 设置主体内行距 */
+        .mk p:not(.xj) {
+            margin-top: 15px;
+        }
+
+        /* 设置展开项的上边距 */
+        details {
+            margin-top: 10px;
+        }
+
+        /* 设置展开项鼠标移入样式 */
+        summary:hover {
+            background-color: aquamarine;
+        }
+
+        /* 设置article的字体大小 */
+        article {
+            font-size: 26px;
+        }
+
+        details {
+            font-size: 18px;
+        }
+
+        /* 设置模块之间的距离 */
+        .mk:not(:first-child) {
+            margin-top: 60px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <p id="fh" style="position: fixed;right: 0px;bottom: 0px; font-size: 20px;border: solid;"><a
+            href="./index.html">首页</a></p>
+
+    <!-- 侧边目录 -->
+    <aside>
+        <a href="#ys">
+            <p class="ml">颜色</p>
+        </a>
+        <a href="#xs">
+            <p class="ml">像素</p>
+        </a>
+        <a href="#xzq">
+            <p class="ml">选择器</p>
+        </a>
+        <a href="#dw">
+            <p class="ml">定位</p>
+        </a>
+        <a href="#ztz">
+            <p class="ml">字体族</p>
+        </a>
+        <a href="#wb">
+            <p class="ml">文本</p>
+        </a>
+        <a href="#bj">
+            <p class="ml">背景</p>
+        </a>
+        <a href="./标签家族.html" target="_blank">
+            <p class="ml">标签家族--></p>
+        </a>
+        <a href="./CSS盒子模型.html" target="_blank">
+            <p class="ml">盒子模型--></p>
+        </a>
+        <a href="#txh">
+            <p class="ml">弹性盒--></p>
+        </a>
+    </aside>
+
+    <!-- 右边工具栏 -->
+    <div class="gj">
+        <a href="./image/html学习/快捷键和实体.png" target="_blank">快捷键和实体</a>
+    </div>
+
+
+    <!-- 主体内容 -->
+    <div class="zt">
+        <!-- 颜色模块 -->
+        <div class="ys mk" id="ys">
+            <div class="bt">颜色</div>
+            <article>
+                <p>css中可以通过三种方式设置颜色：</p>
+                <p>1.颜色名</p>
+                <details>
+                    <summary>示例</summary>
+                    <p class="xj">color:red;</p>
+                    <p class="xj">color:tomato;</p>
+                </details>
+                <p>2.rgb/rgba</p>
+                <details>
+                    <summary>含义</summary>
+                    <p class="xj">表示光的三原色，对应为red，green，blue。a表示不透明度。</p>
+                </details>
+                <details>
+                    <summary>取值范围</summary>
+                    <p class="xj">rgb的范围为0~255或0%~100%，a的范围为0~1。</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <p class="xj">color:rgb(25,66,83);</p>
+                    <p class="xj">color:rgba(87,159,81,.7);</p>
+                </details>
+                <details>
+                    <summary>十六进制用法</summary>
+                    <p class="xj">对应的三位可以用十六进制表示，如：#f36da7；若由两位一样的构成，如#bbffaa，可以简写成#bfa。</p>
+                </details>
+                <p>3.hsl/hsla</p>
+                <details>
+                    <summary>含义</summary>
+                    <p class="xj">h为色相，s为饱和度，l为亮度，a为不透明度</p>
+                </details>
+                <details>
+                    <summary>取值范围</summary>
+                    <p class="xj">h为0~360，s为0%~100%，l为0%~100%，a为0~1</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <p class="xj">color:hsl(25,66%,83%);</p>
+                    <p class="xj">color:hsla(87,159%,81%,.7);</p>
+                </details>
+            </article>
+        </div>
+        <!-- 像素模块 -->
+        <div class="xs mk" id="xs">
+            <div class="bt">像素</div>
+            <details>
+                <summary>种类</summary>
+                <p>px：表示占几个像素点（在电脑端的标准像素大小且不放大的情况下）。</p>
+                <p>em：1em表示1个单位字体大小（字体大小最小为12px）。</p>
+                <p>rem：1rem表示1个html单位字体大小（字体大小最小为12px）。</p>
+                <p>%：表示占父元素视口的百分比大小。</p>
+                <p>vw：表示占视口的百分比大小(100vw表示100%的视口)。</p>
+            </details>
+            <details>
+                <summary>移动端的适配(完美视口)</summary>
+                <p>原则：由于移动端的像素点和标准电脑像素大小不一致，所以要使其像素点强制变大，也就是说一个标准像素点大小等于若干个移动端像素点，那么电脑的像素可以和移动端像素等大，作图的时候不会大小不一（原理是调整了视口大小）。
+                </p>
+                <p>适配方法：meta标签里name="viewport" content="width=device-width"</p>
+            </details>
+            <details>
+                <summary>移动端设计图的一般尺寸</summary>
+                <p>一般手机完美视口375px，为了更好利用移动端的小像素点，设计图一般两倍或三倍，即750px或1125px。</p>
+            </details>
+
+            <details>
+                <summary>怎么将设计图的像素占比可以统一所有设备</summary>
+                <p>原理：用100除以设计图像素大小，得到每个像素对应的vw值，那么把html字体设置为这个vw值后，后面写的数字大小不变把px变成rem就好了，但是字体最小12px，所以一般可以设为那个值的100倍，然后抄的时候缩小100倍就好了。
+                </p>
+                <p>示例：750的设计图，一个px对应0.13333vw，将html字体大小设为13.33333vw，设计图中350px的图就是3.5rem，比例一样大的。</p>
+            </details>
+        </div>
+        <!-- 选择器模块 -->
+        <div class="xzq mk" id="xzq">
+            <div class="bt">选择器</div>
+            <article>
+                <p>1.选择器和伪</p>
+                <details>
+                    <summary>选择器</summary>
+                    <p><img src="./image/html学习/选择器的种类.png" alt="选择器的种类"></p>
+                </details>
+                <details>
+                    <summary>伪类和伪元素</summary>
+                    <p><img src="./image/html学习/伪类和伪元素.png" alt="伪类和伪元素"></p>
+                </details>
+                <p>2.继承</p>
+                <details>
+                    <summary>什么是继承？</summary>
+                    <p>为一个元素设置的样式会应用到它的后代上就是继承，可以利用这个性质简化代码（但是背景或者和布局有关的样式不会被继承）。</p>
+                </details>
+                <p>3.选择器权重</p>
+                <details>
+                    <summary>什么事权重？</summary>
+                    <p>若有选择器冲突，则需计算选择器的权重（即将多个的选择器相加，分组选择器分开计算），若权重一样则后面的优先。</p>
+                </details>
+                <details>
+                    <summary>各个权重值</summary>
+                    <p>内敛：1000</p>
+                    <p>id：100</p>
+                    <p>类和伪类：10</p>
+                    <p>元素：1</p>
+                    <p>通配：0</p>
+                    <p>继承：无</p>
+                </details>
+                <details>
+                    <summary>!important属性</summary>
+                    <p>若在属性后加一个!important则优先级变为最高。例如color:red !important;</p>
+                </details>
+            </article>
+        </div>
+        <!-- 定位模块 -->
+        <div class="dw mk" id="dw">
+            <div class="bt">定位</div>
+            <article>
+                <p>1.position属性的赋值：</p>
+                <details>
+                    <summary>static(默认)</summary>
+                    <p>不设置值的时候默认static</p>
+                </details>
+                <details>
+                    <summary>relative(相对)</summary>
+                    <p>1.使用偏移量（top bottom right left），不然在原位置。</p>
+                    <p>2.参照原位置。</p>
+                    <p>3.层级提高。</p>
+                    <p>4.不改变盒子性质，不脱离文档流，仅仅“灵魂出窍”。</p>
+                </details>
+                <details>
+                    <summary>absolute(绝对)</summary>
+                    <p>1.使用偏移量（top bottom right left）。</p>
+                    <p>2.参照最近的定位祖先元素（最高位html元素）。</p>
+                    <p>3.层级提高。</p>
+                    <p>4.行内元素变为块元素，脱离文档流。</p>
+                </details>
+                <details>
+                    <summary>fixed(固定)</summary>
+                    <p>1.使用偏移量（top bottom right left）。</p>
+                    <p>2.参照视口。</p>
+                    <p>3.层级提高。</p>
+                    <p>4.行内元素变为块元素，脱离文档流。</p>
+                </details>
+                <details>
+                    <summary>sticky(粘滞)</summary>
+                    <p>1.粘滞位置（top bottom right left），不然无用。</p>
+                    <p>2.参照html元素</p>
+                    <p>3.层级提高。</p>
+                    <p>4.不改变盒子性质，不脱离文档流。</p>
+                </details>
+                <p>2.z-index设置层级</p>
+                <details>
+                    <summary>说明</summary>
+                    <p>可以设置z-index的属性来指定元素层级，z-index需要一个整数为参数，值越大层级越高，层级一样，优先显示靠下的元素，但是祖先元素永远盖不住后代元素。</p>
+                </details>
+            </article>
+        </div>
+        <!-- 字体族模块 -->
+        <div class="ztz mk" id="ztz">
+            <div class="bt">字体族</div>
+            <article>
+
+                <p>1.字体集合</p>
+                <details>
+                    <summary>含义</summary>
+                    <p>不是某一个字体，而是一个同类型字体的集合，浏览器会默认随机选取同类型中的一种。</p>
+                </details>
+                <details>
+                    <summary>分类</summary>
+                    <p>serif 衬线字体</p>
+                    <p>sans-serif 非衬线字体</p>
+                    <p>monospace 等宽字体</p>
+                </details>
+
+                <p>2.font-family</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>给浏览器指定字体建议</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>可以指定多个值（从第一个开始没有就往后使用），每个值用逗号隔开，字体名字间有空格的需要加引号</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <p>font-family: 'Courier New', Courier, monospace;</p>
+                </details>
+
+                <p>3.@font-face</p>
+                <details>
+                    <summary>含义</summary>
+                    <p>将服务器中的字体提供给本地（需要网络下载）。</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <img src="./image/html学习/fontface.png" alt="无法显示">
+                </details>
+
+                <p>4.斜体和加粗</p>
+                <details>
+                    <summary>示例</summary>
+                    <img src="./image/html学习/斜体和加粗.png" alt="无法显示">
+                </details>
+
+                <p>5.行高（line-height）</p>
+                <details>
+                    <summary>属性</summary>
+                    <p>可以是具体值，也可以是整数（表示字体的多少倍），默认情况下，属性为1.333333……。</p>
+                </details>
+                <details>
+                    <summary>特点</summary>
+                    <p>行高始终可以令内容垂直居中。</p>
+                </details>
+
+                <p>6.font属性简写：</p>
+                <details>
+                    <summary>示例</summary>
+                    <img src="./image/html学习/font属性简写.png" alt="无法显示">
+                </details>
+                <details>
+                    <summary>说明</summary>
+                    <p>加粗和斜体要放开头，字体名放最后，中间是大小和行高。</p>
+                </details>
+            </article>
+        </div>
+        <!-- 文本模块 -->
+        <div class="wb mk" id="wb">
+            <div class="bt">文本</div>
+            <article>
+
+                <p>1.text-align</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置文本的对齐方式。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>left right center justify</p>
+                </details>
+
+                <p>2.vertical-align</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置对齐基准线。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>baseline top bottom middle px。</p>
+                    <img src="./image/html学习/基线.png" alt="无法显示">
+                </details>
+                <details>
+                    <summary>图片应用</summary>
+                    <p>取消图片下面的白边可以设置img的vertical-align为非baseline的值。</p>
+                </details>
+
+                <p>3.text-decoration</p>
+                <details>
+                    <summary>值</summary>
+                    <p>1.underline(下划线) line-through(删除线) overline(上划线)。</p>
+                    <p>2.border的属性。</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <p>text-decoration: overline red 20px dashed;</p>
+                </details>
+
+                <p>4.white-space</p>
+                <details>
+                    <summary>值</summary>
+                    <p>1.normal：默认值</p>
+                    <p>2.nowrap：不换行</p>
+                    <p>3.pre：保留所有空白</p>
+                </details>
+
+                <p>6.text-overflow</p>
+                <details>
+                    <summary>值</summary>
+                    <p>ellipsis（溢出部分添加省略号）。</p>
+                </details>
+            </article>
+        </div>
+        <!-- 背景模块 -->
+        <div class="bj mk" id="bj">
+            <div class="bt">背景</div>
+            <article>
+
+                <p>1.背景填充</p>
+                <details>
+                    <summary>方式</summary>
+                    <p>1.纯色填充：background-color</p>
+                    <p>1.图片填充：background-img:url('')</p>
+                </details>
+                <details>
+                    <summary>补充</summary>
+                    <p>1.背景颜色和图片可以同时设置，背景颜色将会成为图片背景色。</p>
+                    <p>2.背景图片小于元素大小，会平铺；背景图片大于元素大小，会裁剪。</p>
+                </details>
+
+                <p>2.background-repeat</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景重复方式。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>1.repeat 默认值，背景沿着x和y轴重复平铺。</p>
+                    <p>2.repeat-x 背景沿着x轴重复平铺。</p>
+                    <p>3.repeat-y 背景沿着y轴重复平铺。</p>
+                    <p>4.no-repeat 背景不平铺。</p>
+                </details>
+
+                <p>3.background-position</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景位置。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>top left right bottom center px。</p>
+                </details>
+                <details>
+                    <summary>注意</summary>
+                    <p>设置值时必须要设置两个，第一个是水平方向，第二个是垂直方向。不设置的话，垂直方向默认居中。</p>
+                </details>
+
+                <p>4.background-clip</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景范围。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>1.border-box 默认值，背景会出现在边框下面。</p>
+                    <p>2.padding-box 背景不会出现在边框下面，只出现在内容区和内边距。</p>
+                    <p>3.content-box 背景只出现在内容区。</p>
+                </details>
+
+                <p>6.background-origin</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景左上角的原点位置。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>1.border-box 从边框开始计算。</p>
+                    <p>2. padding-box 默认值，从内边距开始计算。</p>
+                    <p>3.content-box 从内容区开始计算。</p>
+                </details>
+
+                <p>7.background-size</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景图片大小。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>1.px或%或auto：写两个，第一个为宽，第二个为高，只写一个默认等比缩放。</p>
+                    <p>2.cover：将图片等比缩放到能够铺满元素，多余部分直接裁剪。</p>
+                    <p>3.contain：将图片等比缩放到和元素一样宽。</p>
+                </details>
+
+                <p>8.background-attachment</p>
+                <details>
+                    <summary>作用</summary>
+                    <p>设置背景图是否固定。</p>
+                </details>
+                <details>
+                    <summary>值</summary>
+                    <p>1.scroll 默认值，背景会被滑动。</p>
+                    <p>2.fixed 背景固定，永远不动。</p>
+                </details>
+
+                <p>9.背景简写</p>
+                <details>
+                    <summary>注意</summary>
+                    <p>1.size必须在position后并用斜杠隔开。</p>
+                    <p>2.origin要在clip前面。</p>
+                </details>
+                <details>
+                    <summary>示例</summary>
+                    <p>background:url('') #bfa center center/contain border-box content-box no-repeat;</p>
+                </details>
+
+                <p>10.雪碧图</p>
+                <details>
+                    <summary>原理</summary>
+                    <p>1.把不同的图片放到同一张图片里面，依靠移动图片的位置（background-position）来显示不同的图片。</p>
+                </details>
+                <details>
+                    <summary>好处</summary>
+                    <p>将多个图片加载进入页面，降低请求的次数，加快访问速度，提升用户体验。</p>
+                </details>
+                <details>
+                    <summary>作用</summary>
+                    <p>可以解决浏览器加载不同图片的闪烁时间差问题。</p>
+                </details>
+            </article>
+        </div>
+        <!-- 弹性盒模块 -->
+        <div class="txh mk" id="txh">
+            <div class="bt">弹性盒</div>
+            <article>
+                <p>1.基本设置：</p>
+                <details>
+                    <summary>display:flex;</summary>
+                    <p>设置为块级弹性盒。</p>
+                </details>
+                <details>
+                    <summary>display:inline-flex;</summary>
+                    <p>设置为行内元素级弹性盒。</p>
+                </details>
+                <details>
+                    <summary>有关弹性元素</summary>
+                    <p>1.弹性盒的子元素会自动变为弹性元素。</p>
+                    <p>2.一个元素可以既是弹性盒又是弹性元素。</p>
+                </details>
+                <details>
+                    <summary>有关主轴和副轴</summary>
+                    <p>1.主轴：弹性元素在弹性盒中的排列方向为主轴。</p>
+                    <p>2.副轴：垂直主轴的相同方向的为副轴。</p>
+                </details>
+                <p>2.弹性盒的属性</p>
+                <details>
+                    <summary>flex-direction</summary>
+                    <p>1.作用：指定弹性元素排列方式。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;row 从左向右水平排列</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;row-reverse 从右向左水平排列</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;column 从上向下水平排列</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;column-reverse 从下向上水平排列</p>
+                </details>
+                <details>
+                    <summary>flex-wrap</summary>
+                    <p>1.作用：设置弹性元素是否自动换行。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;nowrap：默认值，不换行。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;wrap：沿着副轴方向自动换行。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;wrap-reverse：沿着副轴反方向换行。</p>
+                </details>
+                <details>
+                    <summary>flex-flow</summary>
+                    <p>1.作用：flex-direction和flex-wrap的简写属性。</p>
+                    <p>2.示例：flex-flow:row wrap;</p>
+                </details>
+                <details>
+                    <summary>justify-content</summary>
+                    <p>1.作用：如何分配主轴上的空白部分。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-start：元素沿着主轴起边排列，空白全部堆到终边。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-end：元素沿着主轴终边排列，空白全部堆到主轴起边。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;center：元素居中排列，空白平均分配到主轴两边。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-around：空白平均分到元素两侧。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-between：空白平均分配到每两个元素的中间。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-evenly：空白平均分配到两端和每两个元素的中间。</p>
+                </details>
+                <details>
+                    <summary>align-items</summary>
+                    <p>1.作用：元素在副轴上如何对齐。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;stretch：默认值，将元素的长度设置为相同的值。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-start：元素不会拉伸，沿着副轴起边对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-end：元素不会拉伸，沿着副轴的终边对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-around：元素不会拉伸，元素居中对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-between：元素不会拉伸，沿着基线对齐。</p>
+                </details>
+                <details>
+                    <summary>align-content</summary>
+                    <p>1.作用：如何分配副轴上的空白部分。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-start：元素沿着副轴起端排列，空白全部堆到终端。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-end：元素沿着副轴终端排列，空白全部堆到副轴起端。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;center：元素居中排列，空白平均分配到副轴两端。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-around：空白平均分到元素两端。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-between：空白平均分配到每两个元素的中间。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-evenly：空白平均分配到两端和每两个元素的中间。</p>
+                </details>
+                <p>3.弹性元素的属性</p>
+                <details>
+                    <summary>align-self</summary>
+                    <p>1.作用：元素在副轴上如何对齐（等同单独设置元素的align-item）。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;stretch：默认值，将元素的长度设置为相同的值。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-start：元素不会拉伸，沿着副轴起边对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;flex-end：元素不会拉伸，沿着副轴的终边对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-around：元素不会拉伸，元素居中对齐。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;space-between：元素不会拉伸，沿着基线对齐。</p>
+                </details>
+                <details>
+                    <summary>flex-grow</summary>
+                    <p>1.作用：指定弹性元素伸展系数。</p>
+                    <p>2.值：数字（默认为0）。</p>
+                    <p>3.说明：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;1)当弹性盒有多余空间时，弹性元素如何伸展。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;2)弹性盒剩余空间会按设的数值比例分配给弹性元素。</p>
+                </details>
+                <details>
+                    <summary>flex-shrink</summary>
+                    <p>1.作用：指定弹性元素收缩系数。</p>
+                    <p>2.值：数字（默认为1）。</p>
+                    <p>3.说明：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;1)当弹性盒空间不够时，弹性元素如何收缩。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;2)弹性元素会按设的数值比例收缩。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;3)缩减多少根据缩减系数和元素大小来计算（算法比较复杂）。</p>
+                </details>
+                <details>
+                    <summary>flex-basis</summary>
+                    <p>1.作用：指定弹性元素在主轴上的基础长度/高度。</p>
+                    <p>2.值：px（默认为auto，即本身的长度）。</p>
+                </details>
+                <details>
+                    <summary>flex</summary>
+                    <p>1.作用：指定弹性元素的grow shrink basis三个样式。</p>
+                    <p>2.值：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;1)单独设置：数值数值和px，顺序为（设置grow shrink basis）。</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;2)统一设置：</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【1】initial：默认值，相当于flex:0 1 auto;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【2】auto：相当于flex:1 1 auto;</p>
+                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【3】none：相当于flex:0 0 auto;</p>
+                </details>
+                <details>
+                    <summary>order</summary>
+                    <p>1.作用：指定弹性元素的排列顺序。</p>
+                    <p>2.值：数值（越大越靠后）</p>
+                </details>
+            </article>
+        </div>
+
+
+
+
+    </div>
+
+</body>
+
+</html>
